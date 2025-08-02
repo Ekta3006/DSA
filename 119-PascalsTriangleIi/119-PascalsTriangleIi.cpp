@@ -1,0 +1,15 @@
+// Last updated: 8/2/2025, 5:12:14 PM
+class Solution {
+public:
+    vector<int> getRow(int rowIndex) {
+        vector<int> row(rowIndex+1, 1);
+
+    for(int r=2; r <= rowIndex; r++) {
+        for(int c=r-1; c > 0; c--) {
+            row[c] += row[c - 1];
+        }
+    }
+
+    return row;
+    }
+};
